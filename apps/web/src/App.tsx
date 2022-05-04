@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>From API: {JSON.stringify(data)}</p>        
+        <p>From API: {JSON.stringify(data)}</p>
         <p>From shared: {JSON.stringify(iLikeTurtles)}</p>
       </header>
     </div>
