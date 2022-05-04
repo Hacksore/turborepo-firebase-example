@@ -8,4 +8,7 @@ npm install
 
 # to develop
 npm start
+
+# to deploy
+npm run deploy
 ```
