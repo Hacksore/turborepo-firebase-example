@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">{JSON.stringify(data)}</header>
+      <header className="App-header">From API: {JSON.stringify(data)}</header>
     </div>
   );
 }
