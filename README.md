@@ -7,5 +7,5 @@ How to combine turborepo and firebase
 npm install
 
 # to develop
-npm run dev
+npm start
 ```
