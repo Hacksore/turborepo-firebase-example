@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "turborepo-firebase",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -7,12 +7,16 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "start": "concurrently npm:dev npm:emulators",
     "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "emulators": "firebase emulators:start",
+    "deploy": "turbo run build --parallel && turbo run deploy --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "prettier": "latest",
     "turbo": "latest"
   },
