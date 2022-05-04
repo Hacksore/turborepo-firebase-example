@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { iLikeTurtles } from "shared/util";
+
 import "./App.css";
 
 function App() {
@@ -11,7 +13,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">From API: {JSON.stringify(data)}</header>
+      <header className="App-header">
+        <p>From API: {JSON.stringify(data)}</p>        
+        <p>From shared: {JSON.stringify(iLikeTurtles)}</p>
+      </header>
     </div>
   );
 }
