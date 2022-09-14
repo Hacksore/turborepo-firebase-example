@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "rollup -w -c rollup.config.js",
     "build": "rimraf ./dist/**/* && rollup -c rollup.config.js",
-    "deploy": "firebase deploy --only functions"
+    "deploy": "firebase --non-interactive deploy --only functions"
   },
   "engines": {
     "node": "16"

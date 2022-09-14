@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "firebase deploy --only hosting"
+    "deploy": "firebase --non-interactive deploy --only hosting"
   },
   "dependencies": {
     "react": "^18.0.0",
