@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "concurrently": "^7.1.0",
+    "firebase": "^9.9.4",
     "prettier": "latest",
     "turbo": "latest"
   },
