@@ -11,7 +11,7 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "emulators": "firebase emulators:start",
-    "deploy": "turbo run build --parallel && turbo run deploy --filter=web --filter=api",
+    "deploy": "turbo run build --parallel && turbo run deploy --filter=web --filter=api --force",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
