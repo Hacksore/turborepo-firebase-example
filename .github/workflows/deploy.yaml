@@ -9,7 +9,6 @@ on:
 env:
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
   TURBO_REMOTE_ONLY: true
   NODE_VERSION: "16"
 
@@ -34,9 +33,13 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Create google service account file
+        run: echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > "$HOME/gcloud.json"
       - name: Install
         run: npm ci
       - name: Build projects
         run: npm run build
       - name: Deploy to firebase
         run: npm run deploy
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: "$HOME/gcloud.json"
