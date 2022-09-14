@@ -44,7 +44,7 @@ jobs:
       - name: Debug
         run: | 
           file $HOME/firebase.json
-          echo $GOOGLE_APPLICATION_CREDENTIALS_JSON
+          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}"
           echo $GOOGLE_APPLICATION_CREDENTIALS
       - name: Deploy to firebase
         run: npm run deploy
