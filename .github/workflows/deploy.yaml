@@ -42,4 +42,4 @@ jobs:
       - name: Deploy to firebase
         run: npm run deploy
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: "$HOME/gcloud.json"
+          GOOGLE_APPLICATION_CREDENTIALS: "${{ env.HOME }}/gcloud.json"
