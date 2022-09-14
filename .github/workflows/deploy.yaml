@@ -7,16 +7,15 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: "16"
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
   FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+  TURBO_REMOTE_ONLY: true
+  NODE_VERSION: "16"
 
 jobs:
   build-and-deploy:
     runs-on: "ubuntu-latest"
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      TURBO_REMOTE_ONLY: true
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
