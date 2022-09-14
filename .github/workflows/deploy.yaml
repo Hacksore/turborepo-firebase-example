@@ -33,16 +33,15 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Create google service account file
-        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > "$HOME/gcloud.json"
+      - name: Create google service account file and env var
+        run: |
+          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > "$HOME/firebase.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase.json" >> $GITHUB_ENV
       - name: Install
         run: npm ci
       - name: Build projects
         run: npm run build
       - name: Debug
-        run: "file $HOME/gcloud.json"
+        run: "file $HOME/firebase.json"
       - name: Deploy to firebase
         run: npm run deploy
-        env:
-          # test hard code
-          GOOGLE_APPLICATION_CREDENTIALS: "/home/runner/gcloud.json"
