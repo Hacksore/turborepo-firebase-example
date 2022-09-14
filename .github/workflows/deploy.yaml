@@ -34,11 +34,13 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Create google service account file
-        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > "$HOME/gcloud.json"
+        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > "${{ env.HOME }}/gcloud.json"
       - name: Install
         run: npm ci
       - name: Build projects
         run: npm run build
+      - name: Debug
+        run: "file ${{ env.HOME }}/gcloud.json"
       - name: Deploy to firebase
         run: npm run deploy
         env:
