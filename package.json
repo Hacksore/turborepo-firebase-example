@@ -11,13 +11,12 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "emulators": "firebase emulators:start",
-    "deploy": "turbo run build --parallel && turbo run deploy --parallel",
+    "deploy": "turbo run build --parallel && turbo run deploy --filter=web --filter=api",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "concurrently": "^7.1.0",
-    "firebase": "^9.9.4",
     "prettier": "latest",
     "turbo": "latest"
   },
