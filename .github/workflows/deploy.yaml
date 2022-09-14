@@ -44,4 +44,5 @@ jobs:
       - name: Deploy to firebase
         run: npm run deploy
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: "$HOME/gcloud.json"
+          # test hard code
+          GOOGLE_APPLICATION_CREDENTIALS: "/home/runner/gcloud.json"
