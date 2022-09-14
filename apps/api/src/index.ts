@@ -8,6 +8,7 @@ app.get("*", (req, res) => {
   res.send({
     hello: "world",
     iLikeTurtles: iLikeTurtles,
+    nice: 69,
   });
 });
 
