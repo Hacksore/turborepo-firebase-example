@@ -40,8 +40,8 @@ jobs:
       - name: Build projects
         run: npm run build
       - name: Debug
-        run: "file ${{ env.HOME }}/gcloud.json"
+        run: "file $HOME/gcloud.json"
       - name: Deploy to firebase
         run: npm run deploy
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: "${{ env.HOME }}/gcloud.json"
+          GOOGLE_APPLICATION_CREDENTIALS: "$HOME/gcloud.json"
