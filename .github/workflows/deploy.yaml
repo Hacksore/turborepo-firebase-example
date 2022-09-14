@@ -42,6 +42,8 @@ jobs:
       - name: Build projects
         run: npm run build
       - name: Debug
-        run: "file $HOME/firebase.json"
+        run: | 
+          file $HOME/firebase.json
+          echo $GOOGLE_APPLICATION_CREDENTIALS
       - name: Deploy to firebase
         run: npm run deploy
