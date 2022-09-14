@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "concurrently": "^7.1.0",
+    "firebase-tools": "^11.9.0",
     "prettier": "latest",
     "turbo": "latest"
   },
