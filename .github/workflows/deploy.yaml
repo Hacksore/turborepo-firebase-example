@@ -35,9 +35,12 @@ jobs:
             ${{ runner.os }}-
       - name: Create google service account file and env var
         run: |
-          # decode the token into json and write to file
-          cat "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON_BASE64 }}" | base64 --decode > "$HOME/firebase.json"
+          # decode the token into json and write to file, using base64 to not have to mess with the json format
+          echo "Creating file in $HOME/firebase.json"
+          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON_BASE64 }}" | base64 --decode > "$HOME/firebase.json"
+          
           # source the env with the path to the file
+          echo "Sourcing env GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase.json"
           echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase.json" >> $GITHUB_ENV
       - name: Install
         run: npm ci
