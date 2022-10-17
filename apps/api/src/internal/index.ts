@@ -1,0 +1,1 @@
+export const INTERAL_MODULE = "internal only";
