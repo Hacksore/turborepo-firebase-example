@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["ES2021"],
-    "module": "ES2020",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "target": "ES2021",
+    "target": "ESNext",
     "outDir": "dist",
     "sourceMap": true,
     "rootDir": "../../",
@@ -11,5 +10,5 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "include": ["../../packages/shared/**/*.ts", "src"]
+  "include": ["src"]
 }

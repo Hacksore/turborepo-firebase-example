@@ -1,1 +1,1 @@
-export const INTERAL_MODULE = "internal only";
+export const INTERNAL_MODULE = "internal only";
