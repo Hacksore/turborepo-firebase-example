@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { iLikeTurtles } from "shared/util";
+import { sanitizeName } from "shared/util";
 
 import "./App.css";
 
@@ -25,7 +25,9 @@ function App() {
         </div>
         <div style={{ textAlign: "left" }}>
           <p style={{ fontWeight: "bold" }}>From packages/shared</p>
-          <pre>{JSON.stringify(iLikeTurtles)}</pre>
+          <pre>{JSON.stringify({
+            name: sanitizeName("I like turtles")
+          })}</pre>
         </div>
         <div style={{ textAlign: "left" }}>
           <p style={{ fontWeight: "bold" }}>Source code</p>

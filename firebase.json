@@ -1,9 +1,9 @@
 {
   "functions": {
-    "source": "apps/api"
+    "source": "out-api/apps/api"
   },
   "hosting": {
-    "public": "apps/web/dist",
+    "public": "out-web/apps/web/dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {

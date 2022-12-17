@@ -35,3 +35,6 @@ yarn-error.log*
 *.log
 
 .firebase
+
+out-web
+out-api

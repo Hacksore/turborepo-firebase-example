@@ -1,14 +1,13 @@
 import express from "express";
 import * as functions from "firebase-functions";
-import { iLikeTurtles } from "shared/util";
+import { sanitizeName } from "shared/util";
 
 const app = express();
 
-app.get("*", (req, res) => {
+app.get("*", (_, res) => {
   res.send({
-    hello: "world",
-    iLikeTurtles: iLikeTurtles,
-    nice: 69,
+    name: sanitizeName("I like turtles"),
+    time: Date.now()
   });
 });
 
