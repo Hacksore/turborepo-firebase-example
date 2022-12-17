@@ -20,11 +20,11 @@ function App() {
           <img className="icon-turbo" src="/turborepo.svg" />
         </div>
         <div style={{ textAlign: "left" }}>
-          <p style={{ fontWeight: "bold" }}>From Firebase API</p>
+          <p style={{ fontWeight: "bold" }}>From firebase function</p>
           <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
         <div style={{ textAlign: "left" }}>
-          <p style={{ fontWeight: "bold" }}>From packages/shared</p>
+          <p style={{ fontWeight: "bold" }}>Using util from packages/shared</p>
           <pre>{JSON.stringify({
             name: sanitizeName("I like turtles")
           })}</pre>

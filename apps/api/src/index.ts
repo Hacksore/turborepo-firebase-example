@@ -4,10 +4,11 @@ import { sanitizeName } from "shared/util";
 
 const app = express();
 
-app.get("*", (_, res) => {
+app.get("*", (req, res) => {
   res.send({
     name: sanitizeName("I like turtles"),
-    time: Date.now()
+    time: Date.now(),
+    origin: req.hostname
   });
 });
 
