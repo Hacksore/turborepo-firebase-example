@@ -6,9 +6,6 @@ import { dependencies } from "./package.json";
 const basePackage = {
   name: "api",
   version: "1.0.0",
-  scripts: {
-    start: "yarn run shell",
-  },
   engines: {
     node: "16",
   },
