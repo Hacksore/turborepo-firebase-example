@@ -1,6 +1,6 @@
 {
   "functions": {
-    "source": "apps/api"
+    "source": "apps/api/dist"
   },
   "hosting": {
     "public": "apps/web/dist",

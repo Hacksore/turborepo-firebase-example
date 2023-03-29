@@ -1,27 +1,31 @@
 {
   "name": "api",
   "scripts": {
-    "dev": "rollup -w -c rollup.config.js",
-    "build": "rimraf ./dist/**/* && rollup -c rollup.config.js",
+    "dev": "vite build --watch",
+    "build": "rimraf ./dist/**/* && vite build",
     "deploy": "firebase deploy --only functions"
   },
   "engines": {
     "node": "16"
   },
-  "type": "module",
-  "main": "dist/index.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "dependencies": {
     "express": "^4.17.3",
     "firebase-admin": "^10.1.0",
-    "firebase-functions": "^3.20.1",
-    "rollup": "^2.70.2",
-    "shared": "*"
+    "firebase-functions": "^3.20.1"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.2.1",
-    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/rollup-plugin-generate-package-json": "^3.2.0",
     "eslint": "^8.11.0",
     "rimraf": "^3.0.2",
+    "rollup-plugin-generate-package-json": "^3.2.0",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   },

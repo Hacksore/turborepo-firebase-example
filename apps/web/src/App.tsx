@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { iLikeTurtles } from "shared/util";
+import { iLikeTurtles } from "@acme/shared";
 
 import "./App.css";
 

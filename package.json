@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "concurrently": "^7.1.0",
-    "firebase-tools": "^11.9.0",
+    "firebase-tools": "^11.25.2",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "^1.8.6"
   },
   "engines": {
     "npm": ">=7.0.0",

@@ -1,6 +1,6 @@
 import express from "express";
 import * as functions from "firebase-functions";
-import { iLikeTurtles } from "shared/util";
+import { iLikeTurtles } from "@acme/shared";
 
 const app = express();
 
