@@ -1,12 +1,14 @@
 import express from "express";
 import * as functions from "firebase-functions";
 import { iLikeTurtles } from "@acme/shared";
+import { faker } from "@faker-js/faker";
 
 const app = express();
 
 app.get("*", (req, res) => {
   res.send({
     hello: "world",
+    randomName: faker.name.firstName(),
     iLikeTurtles: iLikeTurtles,
     nice: 69,
   });
