@@ -9,7 +9,7 @@ app.get("*", (req, res) => {
   res.send({
     hello: "world",
     randomName: faker.name.firstName(),
-    iLikeTurtles: iLikeTurtles,
+    iLikeTurtles: iLikeTurtles(),
     nice: 69,
   });
 });

@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "@acme/api",
   "scripts": {
     "dev": "vite build --watch",
     "build": "rimraf ./dist/**/* && vite build",

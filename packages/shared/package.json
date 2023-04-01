@@ -5,6 +5,9 @@
   "type": "module",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0"
+  },
   "files": [
     "*"
   ]
