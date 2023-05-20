@@ -1,12 +1,24 @@
 {
   "name": "@acme/api",
+  "version": "1.0.0",
+  "engines": {
+    "node": "18"
+  },
+  "files": [
+    "build"
+  ],
+  "main": "./index.umd.js",
+  "module": "./index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite build --watch",
     "build": "rimraf ./dist/**/* && vite build",
     "deploy": "firebase deploy --only functions"
-  },
-  "engines": {
-    "node": "18"
   },
   "dependencies": {
     "@faker-js/faker": "^8.0.1",

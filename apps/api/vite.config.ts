@@ -1,24 +1,10 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import generatePackageJson from "rollup-plugin-generate-package-json";
-import { dependencies } from "./package.json";
+import packageJson from "./package.json";
 
-const basePackage = {
-  name: "api",
-  version: "1.0.0",
-  engines: {
-    node: "18",
-  },
-  files: ["build"],
-  main: "./index.umd.js",
-  module: "./index.js",
-  exports: {
-    ".": {
-      import: "./index.js",
-      require: "./index.umd.js",
-    },
-  },
-};
+// NOTE: the @acme/shared package cannot be included into the deps casue it will attempt to be installed in 
+// the firebase function build step and fail, so as a work around we are using a bundler to move the code into the final bundle that we ship to firebase
 
 // NOTE: we are using vite for bundling but "native" support for nodejs is not yet available
 // for the tracking of that there is the following issue and if that is solved this implementation may change
@@ -33,15 +19,12 @@ export default defineConfig({
     },
     outDir: "dist",
     rollupOptions: {
-      external: Object.keys(dependencies),
+      external: Object.keys(packageJson.dependencies),
+      // NOTE: Firebase requires a package.json to be present in the functions folder
+      // this is a workaround to generate that file so firebase stays happy
       plugins: [
         generatePackageJson({
-          baseContents: basePackage,
-          additionalDependencies: {
-            // NOTE: these will fall out of date quickly, probably best to just use the versions from package.json
-            "firebase-functions": "^4.2.1",
-            "firebase-admin": "^11.5.0",
-          },
+          baseContents: packageJson,
         }),
       ],
     },
