@@ -7,7 +7,7 @@ const basePackage = {
   name: "api",
   version: "1.0.0",
   engines: {
-    node: "16",
+    node: "18",
   },
   files: ["build"],
   main: "./index.umd.js",
