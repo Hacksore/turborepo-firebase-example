@@ -6,7 +6,7 @@
     "deploy": "firebase deploy --only functions"
   },
   "engines": {
-    "node": "16"
+    "node": "18"
   },
   "dependencies": {
     "@faker-js/faker": "^8.0.1",
