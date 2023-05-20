@@ -8,7 +8,7 @@ const app = express();
 app.get("*", (req, res) => {
   res.send({
     hello: "world",
-    randomName: faker.name.firstName(),
+    randomName: faker.person.firstName(),
     iLikeTurtles: iLikeTurtles(),
     nice: 69,
   });

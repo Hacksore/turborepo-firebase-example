@@ -6,5 +6,5 @@ import { faker } from "@faker-js/faker";
 export const iLikeTurtles = () => ({
   niceNumber: 69,
   blazinglyFast: 420,
-  randomLastName: faker.name.lastName(),
+  randomLastName: faker.person.lastName(),
 });
