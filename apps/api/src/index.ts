@@ -1,11 +1,11 @@
-import express from "express";
-import * as functions from "firebase-functions";
 import { iLikeTurtles } from "@acme/shared";
+import { onRequest } from "firebase-functions/v2/https";
 import { faker } from "@faker-js/faker";
+import express from "express";
 
 const app = express();
 
-app.get("*", (req, res) => {
+app.get("*", (_req, res) => {
   res.send({
     hello: "world",
     randomName: faker.person.firstName(),
@@ -14,4 +14,4 @@ app.get("*", (req, res) => {
   });
 });
 
-export const server = functions.https.onRequest(app);
+export const server = onRequest(app);
